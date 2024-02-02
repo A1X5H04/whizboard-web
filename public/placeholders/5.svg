@@ -1,0 +1,10 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="200" height="200" transform="matrix(1 0 0 -1 0 200)" fill="#546EF3"/>
+<rect x="200" width="200" height="200" fill="#1D1F22"/>
+<rect width="200" height="200" transform="matrix(1 0 0 -1 0 400)" fill="#546EF3"/>
+<rect width="200" height="100" transform="matrix(1 0 0 -1 0 400)" fill="#C2DBFF"/>
+<path d="M100 200C44.7715 200 0 244.772 0 300H200C200 244.772 155.228 200 100 200Z" fill="#C2DBFF"/>
+<rect x="200" y="200" width="200" height="200" fill="#C2DBFF"/>
+<rect x="200" y="200" width="200" height="100" fill="#1D1F22"/>
+<path d="M300 400C355.228 400 400 355.228 400 300H200C200 355.228 244.772 400 300 400Z" fill="#1D1F22"/>
+</svg>

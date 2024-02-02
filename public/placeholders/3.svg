@@ -1,0 +1,12 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="200" height="200" transform="matrix(-1 0 0 1 200 0)" fill="#C2DBFF"/>
+<path d="M200 0C200 26.2644 194.827 52.2716 184.776 76.5367C174.725 100.802 159.993 122.85 141.421 141.421C122.85 159.993 100.802 174.725 76.5367 184.776C52.2716 194.827 26.2644 200 0 200L1.52588e-05 0H200Z" fill="#1D1F22"/>
+<rect x="400" y="200" width="200" height="200" transform="rotate(180 400 200)" fill="#C2DBFF"/>
+<rect x="400" y="200" width="200" height="100" transform="rotate(180 400 200)" fill="#1D1F22"/>
+<path d="M300 0C244.772 0 200 44.7715 200 100L400 100C400 44.7715 355.228 0 300 0Z" fill="#1D1F22"/>
+<rect width="200" height="200" transform="matrix(-1 0 0 1 200 200)" fill="#1D1F22"/>
+<rect width="200" height="100" transform="matrix(-1 0 0 1 200 200)" fill="#C2DBFF"/>
+<path d="M100 400C44.7715 400 0 355.228 0 300H200C200 355.228 155.228 400 100 400Z" fill="#C2DBFF"/>
+<rect x="400" y="400" width="200" height="200" transform="rotate(180 400 400)" fill="#1D1F22"/>
+<path d="M300 300C244.772 300 200 344.772 200 400H400C400 344.772 355.228 300 300 300Z" fill="#546EF3"/>
+</svg>
