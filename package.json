@@ -9,19 +9,33 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.5",
+    "@liveblocks/client": "^1.9.7",
+    "@liveblocks/node": "^1.9.7",
+    "@liveblocks/react": "^1.9.7",
+    "@phosphor-icons/react": "^2.0.15",
+    "convex": "^1.8.0",
+    "convex-helpers": "^0.1.15",
+    "konva": "^9.3.2",
+    "nanoid": "^5.0.5",
+    "next": "14.1.0",
+    "query-string": "^8.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "react-hot-toast": "^2.4.1",
+    "react-konva": "^18.2.10",
+    "usehooks-ts": "^2.10.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "daisyui": "^4.6.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "typescript": "^5"
   }
 }
