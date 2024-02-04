@@ -11,7 +11,7 @@ function CanvasNavbar({ boardId }: { boardId: string }) {
   const data = useQuery(api.board.get, { id: boardId as Id<"boards"> });
 
   return (
-    <div className="absolute top-3 w-[95%] translate-x-1/2 right-1/2">
+    <div className="absolute top-3  w-[95%] translate-x-1/2 right-1/2">
       <div className="navbar bg-neutral rounded-xl shadow-xl">
         <div className="navbar-start">
           <Link href="/" className="btn btn-ghost btn-circle">
@@ -27,9 +27,6 @@ function CanvasNavbar({ boardId }: { boardId: string }) {
               tabIndex={0}
               className="menu menu-sm dropdown-content text-center mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-60"
             >
-              <li>
-                <a>Download Board as Image</a>
-              </li>
               <li>
                 <a>Copy Board Link</a>
               </li>

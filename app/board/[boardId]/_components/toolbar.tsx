@@ -4,11 +4,11 @@ import {
   ArrowUDownRight,
   Circle,
   Cursor,
+  Eraser,
   NoteBlank,
-  Pen,
+  Pencil,
   Rectangle,
   TextT,
-  Triangle,
 } from "@phosphor-icons/react";
 
 interface CanvasToolbarProps {
@@ -35,13 +35,12 @@ function CanvasToolbar({
           <button
             onClick={() => setCanvasState({ mode: CanvasMode.None })}
             className={
-              canvasState.mode === CanvasMode.None
-                ? // canvasState.mode === CanvasMode.SelectionNet ||
-                  // canvasState.mode === CanvasMode.Translating ||
-                  // canvasState.mode === CanvasMode.Inserting ||
-                  // canvasState.mode === CanvasMode.Pressing ||
-                  // canvasState.mode === CanvasMode.Resizing
-                  "active tooltip"
+              canvasState.mode === CanvasMode.None ||
+              canvasState.mode === CanvasMode.SelectionNet ||
+              canvasState.mode === CanvasMode.Translating ||
+              canvasState.mode === CanvasMode.Pressing ||
+              canvasState.mode === CanvasMode.Resizing
+                ? "active tooltip"
                 : "tooltip"
             }
             data-tip="Select"
@@ -134,9 +133,9 @@ function CanvasToolbar({
                 ? "active tooltip"
                 : "tooltip"
             }
-            data-tip="Pen"
+            data-tip="Pencil"
           >
-            <Pen size={20} weight="bold" />
+            <Pencil size={20} weight="bold" />
           </button>
         </li>
         <div className="divider divider-horizontal h-6 my-auto" />

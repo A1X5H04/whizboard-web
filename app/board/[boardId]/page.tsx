@@ -18,7 +18,7 @@ function BoardIdPage({ params }: BoardIdPageProps) {
         </div>
       }
     >
-      <Canvas boardId={params.boardId} />;
+      <Canvas boardId={params.boardId} />
     </Room>
   );
 }
