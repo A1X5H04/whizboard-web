@@ -24,7 +24,7 @@ export type RectangleLayer = {
   width: number;
   height: number;
   fill: Color;
-  value?: Color;
+  value?: string;
 };
 
 export type EllipseLayer = {
@@ -34,7 +34,7 @@ export type EllipseLayer = {
   width: number;
   height: number;
   fill: Color;
-  value?: Color;
+  value?: string;
 };
 
 export type PathLayer = {
@@ -45,7 +45,7 @@ export type PathLayer = {
   height: number;
   fill: Color;
   points: number[][];
-  value?: Color;
+  value?: string;
 };
 
 export type TextLayer = {
@@ -55,7 +55,7 @@ export type TextLayer = {
   width: number;
   height: number;
   fill: Color;
-  value?: Color;
+  value?: string;
 };
 
 export type NoteLayer = {
@@ -65,7 +65,7 @@ export type NoteLayer = {
   width: number;
   height: number;
   fill: Color;
-  value?: Color;
+  value?: string;
 };
 
 export type Point = {
@@ -73,7 +73,7 @@ export type Point = {
   y: number;
 };
 
-export type Transform = {
+export type Bounds = {
   x: number;
   y: number;
   width: number;
@@ -110,7 +110,7 @@ export type CanvasState =
         | LayerType.Text
         | LayerType.Note;
     }
-  | { mode: CanvasMode.Resizing; initialBounds: Transform; corner: Side }
+  | { mode: CanvasMode.Resizing; initialBounds: Bounds; corner: Side }
   | { mode: CanvasMode.Drawing };
 
 export enum CanvasMode {
