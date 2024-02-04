@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import clsx from "clsx";
 import { useOrganization, useOrganizationList } from "@clerk/nextjs";
 
 interface ItemProps {
@@ -26,7 +27,11 @@ function OrganizationItem({ id, name, imageUrl }: ItemProps) {
         alt={name}
         src={imageUrl}
         onClick={onClick}
-        className="rounded-md cursor-pointer opacity-75 hover:opacity-100 transition"
+        className={clsx(
+          "rounded-md cursor-pointer opacity-75 hover:opacity-100 transition ring-offset-2 ring-1 hover:ring-neutral ring-offset-transparent",
+          isActive ? "ring-primary" : "ring-transparent",
+          isActive ? "opacity-100" : "opacity-75"
+        )}
       />
     </div>
   );

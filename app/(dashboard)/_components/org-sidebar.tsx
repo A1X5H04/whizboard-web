@@ -27,9 +27,9 @@ function OrganizationSidebar() {
             organizationSwitcherTrigger: {
               padding: "10px 12px",
               width: "100%",
-              borderRadius: "6px",
+              borderRadius: "var(--rounded-btn, 0.5rem)",
               boxShadow:
-                " var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);",
+                "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);",
               color: "#374151",
               backgroundColor: "#d1d5db",
               "&:hover": {

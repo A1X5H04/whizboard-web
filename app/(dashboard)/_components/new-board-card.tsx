@@ -28,7 +28,7 @@ function NewBoardCard({ organizationId }: NewBoardCardProps) {
   };
 
   return (
-    <div className="group aspect-[100/127] grid place-items-center border border-dashed border-primary rounded-xl bg-neutral">
+    <div className="group aspect-[100/127] grid place-items-center border-2 border-dashed border-primary rounded-xl bg-neutral hover:border-opacity-75">
       <button onClick={createBoard} className="cursor-pointer w-full h-full">
         <div className="inline-flex items-center justify-center flex-col gap-y-4">
           <Plus size={40} className="text-primary" />

@@ -27,13 +27,13 @@ function SearchInput() {
   }, [debouncedValue, router]);
 
   return (
-    <div className="input h-10 input-bordered w-full max-w-md inline-flex items-center gap-x-3">
+    <div className="input input-bordered w-full max-w-md inline-flex items-center gap-x-3">
       <MagnifyingGlass size="20" />
       <input
         onChange={handleChange}
         value={value}
         type="text"
-        className="w-full h-full bg-transparent focus:outline-none appearance-none text-sm"
+        className="w-full h-full bg-transparent focus:outline-none appearance-none"
         placeholder="Search Boards"
       />
     </div>

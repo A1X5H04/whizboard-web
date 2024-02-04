@@ -7,6 +7,8 @@ import EmptyStateFavourite from "./emptystates/favourite";
 import EmptyStateSearch from "./emptystates/search";
 import BoardCard from "./board-card";
 import NewBoardCard from "./new-board-card";
+import Loading from "./emptystates/loading";
+import RenameModal from "./rename-modal";
 
 interface BoardListProps {
   organizationId: string;
@@ -23,7 +25,7 @@ function BoardList({ organizationId, query }: any) {
   });
 
   if (data === undefined) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (!data?.length && query?.search) {

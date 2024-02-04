@@ -6,22 +6,17 @@ import {
   PencilSimple,
   TrashSimple,
 } from "@phosphor-icons/react";
-import { useMutation } from "convex/react";
 import React from "react";
 import toast from "react-hot-toast";
+import RenameModal from "./rename-modal";
+import DeleteModal from "./delete-modal";
 function BoardActions({ boardId }: { boardId: any }) {
-  const remove = useMutation(api.board.remove);
-
+  const deleteModalRef = React.useRef<HTMLDialogElement>(null);
+  const renameModalRef = React.useRef<HTMLDialogElement>(null);
   const onCopyLink = () => {
     navigator.clipboard
       .writeText(window.location.origin + "/board/" + boardId)
       .then(() => toast.success("Link copied!"));
-  };
-
-  const onDeleteBoard = () => {
-    remove({ id: boardId })
-      .then(() => toast.success("Board deleted!"))
-      .catch(() => toast.error("Failed to delete board"));
   };
 
   return (
@@ -43,7 +38,7 @@ function BoardActions({ boardId }: { boardId: any }) {
         </li>
         <li>
           <button
-            onClick={onCopyLink}
+            onClick={() => renameModalRef.current?.showModal()}
             className="tooltip tooltip-bottom"
             data-tip="Rename"
           >
@@ -52,7 +47,7 @@ function BoardActions({ boardId }: { boardId: any }) {
         </li>
         <li className="text-rose-600">
           <button
-            onClick={onDeleteBoard}
+            onClick={() => deleteModalRef.current?.showModal()}
             className="tooltip tooltip-bottom"
             data-tip="Delete"
           >
@@ -60,6 +55,8 @@ function BoardActions({ boardId }: { boardId: any }) {
           </button>
         </li>
       </ul>
+      <DeleteModal modalRef={deleteModalRef} boardId={boardId} />
+      <RenameModal modalRef={renameModalRef} boardId={boardId} />
     </div>
   );
 }
