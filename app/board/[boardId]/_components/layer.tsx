@@ -6,6 +6,7 @@ import { Rectangle } from "./layers/rectangle";
 import { Text } from "./layers/text";
 import { memo } from "react";
 import Ellipse from "./layers/ellipse";
+
 import { Path } from "./layers/path";
 
 interface LayerProps {
@@ -31,7 +32,6 @@ export const Layer = memo(
           />
         );
       case LayerType.Path:
-        console.log("Path layer", layer.points);
         return (
           <Path
             key={id}
@@ -43,6 +43,7 @@ export const Layer = memo(
             stroke={selectionColor}
           />
         );
+
       case LayerType.Ellipse:
         return (
           <Ellipse
@@ -61,9 +62,8 @@ export const Layer = memo(
             selectionColor={selectionColor}
           />
         );
-
       default:
-        console.warn("Unknown layer type", layer.type);
+        console.warn("Unknown layer type");
         return null;
     }
   }
