@@ -28,6 +28,12 @@ export function colorToCss(color: Color) {
     .padStart(2, "0")}${color.b.toString(16).padStart(2, "0")}`;
 }
 
+export function getContrastingTextColor(color: Color) {
+  const luminance = 0.299 * color.r + 0.587 * color.g + 0.114 * color.b;
+
+  return luminance > 182 ? "black" : "white";
+}
+
 export const pointerEventToCanvasCoords = (
   event: React.PointerEvent,
   camera: Camera
