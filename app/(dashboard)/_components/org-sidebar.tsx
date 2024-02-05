@@ -3,7 +3,7 @@
 import { OrganizationSwitcher } from "@clerk/nextjs";
 import { useSearchParams } from "next/navigation";
 import { Star, UsersThree } from "@phosphor-icons/react";
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 function OrganizationSidebar() {
@@ -12,8 +12,9 @@ function OrganizationSidebar() {
 
   return (
     <div className="hidden lg:flex flex-col space-y-6 w-64 pl-5 pt-5">
-      <div className="mb-3 mt-2">
-        <h1 className="font-extrabold text-xl">WhizBoard</h1>
+      <div className="inline-flex gap-x-3 mb-3 mt-2">
+        <Image src="/logo.png" alt="Logo" width={28} height={28} />
+        <h1 className="font-bold text-lg">WhizBoard</h1>
       </div>
       <OrganizationSwitcher
         appearance={{
