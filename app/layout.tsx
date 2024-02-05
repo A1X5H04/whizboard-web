@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { ToasterProvider } from "@/providers/toaster-provider";
+import { Suspense } from "react";
+import AuthLoader from "@/components/auth-loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ConvexClientProvider>
-          <ToasterProvider />
-
-          {children}
-        </ConvexClientProvider>
+        <Suspense fallback={<AuthLoader />}>
+          <ConvexClientProvider>
+            <ToasterProvider />
+            {children}
+          </ConvexClientProvider>
+        </Suspense>
       </body>
     </html>
   );
