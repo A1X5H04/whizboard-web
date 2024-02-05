@@ -67,7 +67,7 @@ function CanvasToolbar({
             <TextT size={20} weight="bold" />
           </button>
         </li>
-        <li>
+        {/* <li>
           <button
             onClick={() =>
               setCanvasState({
@@ -85,7 +85,7 @@ function CanvasToolbar({
           >
             <NoteBlank size={20} weight="bold" />
           </button>
-        </li>
+        </li> */}
         <li>
           <button
             onClick={() =>
