@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d28e983e-c4f9-49f5-bc60-cfb3ede002a9/deploy-status)](https://app.netlify.com/sites/whizboard/deploys)
+
+# WhizBoard
+
+WhizBoard is a collaborative brainstorming application designed to bring your team's ideas together in a seamless and interactive way. Drawing inspiration from platforms like Miro, WhizBoard provides a digital canvas where you can brainstorm, strategize, and visualize your ideas in real-time.
+
+## Features
+
+- **Real-Time Collaboration:** Brainstorm with your team in real-time, regardless of your geographical location. Changes made by users are instantly reflected on the board.
+- **Interactive Canvas:** Draw, write, and add images or documents directly onto the canvas. The canvas is infinite, providing you with all the space you need to express your ideas.
+- **Versatile Tools:** Use a variety of tools like sticky notes, shapes, lines, and text to capture and organize your thoughts.
+- **Easy Navigation:** Navigate the board easily with pan and zoom functionality. You can also follow other users to see what they're working on.
+- **Export and Share:** Export your boards to various formats like PDF or PNG. Share your boards with others, even if they don't have a WhizBoard account.
 
 ## Getting Started
 
-First, run the development server:
+To get started with WhizBoard, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/yourusername/whizboard.git
+cd whizboard
+npm install
+```
+
+Then, start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+We welcome contributions from everyone. If you're interested in contributing, please see our [Contributing Guide](CONTRIBUTING.md).
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+WhizBoard is [MIT licensed](LICENSE).
