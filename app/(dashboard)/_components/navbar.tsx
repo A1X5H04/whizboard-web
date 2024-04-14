@@ -14,7 +14,7 @@ function Navbar() {
       <div className="hidden lg:flex lg:flex-1">
         <SearchInput />
       </div>
-      <UserButton />
+      <UserButton afterSignOutUrl="/" />
     </div>
   );
 }
