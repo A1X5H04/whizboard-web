@@ -10,7 +10,6 @@ import { api } from "@/convex/_generated/api";
 import BoardActions from "../_components/board-actions";
 import { Id } from "@/convex/_generated/dataModel";
 import toast from "react-hot-toast";
-import RenameModal from "./rename-modal";
 
 interface BoardCardProps {
   id: string;
@@ -58,8 +57,8 @@ function BoardCard({
   return (
     <div>
       <Link href={`/board/${id}`}>
-        <div className="group aspect-[100/127] rounded-2xl flex flex-col justify-between shadow-xl bg-base-100">
-          <div className="relative flex-1 m-1 rounded-t-2xl rounded-b-xl overflow-hidden">
+        <div className="group w-full h-80 rounded-box flex flex-col justify-between shadow-xl bg-base-100">
+          <div className="relative flex-1 m-1 rounded-box rounded-b-xl overflow-hidden">
             <Image src={imageUrl} alt={title} fill className="object-cover" />
             {/* <div className="opacity-0 group-hover:opacity-75 transition-opacity h-full w-full bg-base-300" /> */}
             <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -72,7 +71,7 @@ function BoardCard({
               <Star
                 onClick={toggleFavourite}
                 weight={isFavourite ? "fill" : "regular"}
-                className="fill-accent hover:fill-teal-500 transition-colors cursor-pointer"
+                className="fill-secondary hover:opacity-60 transition-opacity cursor-pointer"
                 size={20}
               />
             </div>

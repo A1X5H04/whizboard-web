@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { ToasterProvider } from "@/providers/toaster-provider";
 import { Suspense } from "react";
 import AuthLoader from "@/components/auth-loader";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Poppins({
+  weight: ["900", "800", "700", "600", "500", "400"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={font.className}>
         <Suspense fallback={<AuthLoader />}>
           <ConvexClientProvider>
             <ToasterProvider />

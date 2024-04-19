@@ -12,16 +12,16 @@ function SignUpPage() {
             fontSize: "1.5rem",
           },
           headerSubtitle: {
-            color: "oklch(var(--nc))",
+            color: "oklch(var(--bc))",
             opacity: 0.8,
           },
           socialButtonsBlockButton: {
-            backgroundColor: "oklch(var(--n))",
-            color: "oklch(var(--nc))",
+            backgroundColor: "oklch(var(--b3))",
+            color: "oklch(var(--bc))",
             paddingBlock: "1rem",
-            borderRadius: "0.5rem",
+            borderRadius: "var(--rounded-btn, 0.5rem)",
             "&:hover": {
-              backgroundColor: "oklch(var(--n))",
+              backgroundColor: "oklch(var(--b2))",
               opacity: 0.8,
             },
           },
@@ -29,29 +29,29 @@ function SignUpPage() {
             backgroundColor: "oklch(var(--n))",
           },
           dividerText: {
-            color: "oklch(var(--nc))",
+            color: "oklch(var(--bc))",
           },
           formFieldLabel: {
-            color: "oklch(var(--nc))",
+            color: "oklch(var(--bc))",
           },
           formFieldInput: {
             backgroundColor: "oklch(var(--b2))",
-            color: "oklch(var(--nc))",
+            color: "oklch(var(--bc))",
             paddingBlock: "1rem",
-            borderRadius: "0.5rem",
+            borderRadius: "var(--rounded-btn, 0.5rem)",
             borderColor: "oklch(var(--n))",
             "&:focus": {
               backgroundColor: "oklch(var(--b1))",
             },
           },
           card: {
-            backgroundColor: "oklch(var(--b2))",
+            backgroundColor: "oklch(var(--b1))",
           },
           formButtonPrimary: {
             backgroundColor: "oklch(var(--p))",
             color: "oklch(var(--pc))",
             paddingBlock: "1.2rem",
-            borderRadius: "0.5rem",
+            borderRadius: "var(--rounded-btn, 0.5rem)",
             "&:hover": {
               backgroundColor: "oklch(var(--p))",
               opacity: 0.8,
@@ -61,13 +61,13 @@ function SignUpPage() {
             color: "oklch(var(--er))",
           },
           formFieldInfoText: {
-            color: "oklch(var(--nc))",
+            color: "oklch(var(--bc))",
           },
           formFieldSuccessText: {
-            color: "oklch(var(--nc))",
+            color: "oklch(var(--bc))",
           },
           footerActionText: {
-            color: "oklch(var(--nc))",
+            color: "oklch(var(--bc))",
           },
           footerActionLink: {
             color: "oklch(var(--a))",

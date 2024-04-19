@@ -7,10 +7,16 @@ function AuthLoader() {
         <Image
           src="/logo-lg.png"
           alt="Logo"
-          width={100}
-          height={100}
+          width={75}
+          height={75}
           className="animate-bounce"
         />
+        <div>
+          <h2 className="text-3xl font-extrabold mt-8 text-primary">
+            WhizBoard
+          </h2>
+          <p>A realtime collaboration platform!</p>
+        </div>
       </div>
     </div>
   );

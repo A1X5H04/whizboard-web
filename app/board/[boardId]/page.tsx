@@ -14,7 +14,10 @@ function BoardIdPage({ params }: BoardIdPageProps) {
       roomId={params.boardId}
       fallback={
         <div className="w-screen h-screen grid place-items-center">
-          <span className="loading loading-dots loading-lg"></span>
+          <div className="space-y-3 inline-flex flex-col items-center justify-center">
+            <span className="loading loading-dots loading-lg text-primary" />
+            <p className="text-lg font-semibold">Loading Board</p>
+          </div>
         </div>
       }
     >

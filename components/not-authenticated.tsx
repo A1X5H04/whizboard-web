@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 
 function NotAuthenticated() {
   const router = useRouter();
+
   return (
     <div className="grid place-items-center h-full">
       <div className="text-center flex flex-col items-center justify-center">

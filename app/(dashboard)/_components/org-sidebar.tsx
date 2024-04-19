@@ -31,19 +31,23 @@ function OrganizationSidebar() {
               borderRadius: "var(--rounded-btn, 0.5rem)",
               boxShadow:
                 "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);",
-              color: "#374151",
-              backgroundColor: "#d1d5db",
+              color: "oklch(var(--bc))",
+              backgroundColor: "oklch(var(--b3))",
               "&:hover": {
-                backgroundColor: "#e5e7eb",
+                backgroundColor: "oklch(var(--b2))",
               },
-              "@media (prefers-color-scheme: dark)": {
-                backgroundColor: "#374151",
-                color: "#d1d5db",
-                "&:hover": {
-                  backgroundColor: "#4b5563",
-                },
-              },
+
+              // "@media (prefers-color-scheme: dark)": {
+              //   backgroundColor: "#374151",
+              //   color: "#d1d5db",
+              //   "&:hover": {
+              //     backgroundColor: "#4b5563",
+              //   },
+              // },
               justifyContent: "space-between",
+            },
+            organizationSwitcherTriggerIcon: {
+              color: "oklch(var(--bc))",
             },
           },
         }}
@@ -53,7 +57,7 @@ function OrganizationSidebar() {
         <ul className="menu w-full space-y-2">
           <li>
             <Link href="/" className={favouriteRoute ? "" : "active"}>
-              <UsersThree />
+              <UsersThree weight={favouriteRoute ? "regular" : "fill"} />
               Team Board
             </Link>
           </li>
@@ -65,7 +69,7 @@ function OrganizationSidebar() {
                 query: { favourite: "true" },
               }}
             >
-              <Star />
+              <Star weight={favouriteRoute ? "fill" : "regular"} />
               Favourite Board
             </Link>
           </li>

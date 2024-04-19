@@ -17,8 +17,8 @@ function NewOrgButton() {
       >
         <Plus size={18} />
       </button>
-      <dialog id="org_modal" className="modal">
-        <div className="modal-box w-full">
+      <dialog id="org_modal" className="modal bg-transparent">
+        <div className="modal-box bg-inherit shadow-none overflow-visible">
           <CreateOrganization
             appearance={{
               elements: {
@@ -26,8 +26,6 @@ function NewOrgButton() {
                   backgroundColor: "bg-slate-700",
                   borderRadius: "rounded-md",
                   padding: "p-5",
-                  width: "w-full",
-                  height: "h-full",
                 },
               },
             }}

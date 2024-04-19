@@ -9,11 +9,11 @@ export const ToasterProvider = () => {
       toastOptions={{
         position: "bottom-right",
         style: {
-          background: "oklch(var(--n))",
-          color: "oklch(var(--nc))",
+          background: "oklch(var(--b2))",
+          color: "oklch(var(--bc))",
           fontSize: "1rem",
-          padding: "1rem",
-          borderRadius: "0.6rem",
+          padding: "0.5rem 1rem",
+          borderRadius: "var(--rounded-box)",
         },
       }}
     />

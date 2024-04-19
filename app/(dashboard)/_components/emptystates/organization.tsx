@@ -13,7 +13,7 @@ function EmptyStateOrg() {
         />
         <h2 className="text-2xl font-bold">Welcome to WhizBoard</h2>
         <p className="text-sm text-gray-500">
-          Create an organization to get started
+          Create an organization to get started!
         </p>
         <button className="btn btn-primary mt-6">Create Organization</button>
       </div>
