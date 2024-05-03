@@ -10,9 +10,7 @@ WhizBoard is a collaborative brainstorming application designed to bring your te
 
 - **Real-Time Collaboration:** Brainstorm with your team in real-time, regardless of your geographical location. Changes made by users are instantly reflected on the board. Powered by [LiveBlocks](https://liveblocks.io/).
 
-- **Lightweight SVG Canvas:** WhizBoard uses an SVG canvas to render your ideas. This allows for a smooth and interactive experience, even with a large number of elements on the board.
-
-- **Made from Scratch:** The SVG canvas is built from scratch using React and SVG elements. This allows for a high level of customization and control over the board. Though, it may not be performant like other third-party libraries.
+- **Lightweight SVG Canvas:** WhizBoard uses an SVG canvas (mostly) from scratch to render your ideas. This allows for a smooth and interactive experience, even with a large number of elements on the board. Though, it may not be performant like other third-party canvas libraries.
 
 - **Interactive Elements:** Add interactive elements like sticky notes, shapes, lines, and text to your board. You can also pan and zoom to navigate the board easily.
 
