@@ -3,12 +3,10 @@
 import { useOrganization } from "@clerk/nextjs";
 import EmptyStateOrg from "./_components/emptystates/organization";
 import BoardList from "./_components/board-list";
-import RenameModal from "./_components/rename-modal";
 
 interface DashboardPageProps {
   searchParams: {
     search?: string;
-    favourite?: string;
   };
 }
 
@@ -20,9 +18,7 @@ function DashboardPage({ searchParams }: DashboardPageProps) {
         <EmptyStateOrg />
       ) : (
         <div className="h-full ">
-          <h1 className="text-3xl mt-4 font-bold">
-            {searchParams.favourite ? "Favourite Boards" : "Team Boards"}
-          </h1>
+          <h1 className="text-3xl mt-4 font-bold">My Boards</h1>
           <BoardList organizationId={organization.id} query={searchParams} />
         </div>
       )}
