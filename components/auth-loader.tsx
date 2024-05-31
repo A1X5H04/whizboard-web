@@ -15,7 +15,7 @@ function AuthLoader() {
           <h2 className="text-3xl font-extrabold mt-8 text-primary">
             WhizBoard
           </h2>
-          <p>A realtime collaboration platform!</p>
+          <p>Your Digital Playground for Ideas!</p>
         </div>
       </div>
     </div>
