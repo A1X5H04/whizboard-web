@@ -26,7 +26,7 @@ function BoardActions({ boardId }: { boardId: any }) {
         e.preventDefault();
       }}
     >
-      <ul className="menu menu-xs menu-horizontal bg-base-200 rounded-box z-10">
+      <ul className="menu menu-xs menu-horizontal bg-base-200 shadow-xl  rounded-box z-10">
         <li>
           <button
             onClick={onCopyLink}
