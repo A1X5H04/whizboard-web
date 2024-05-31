@@ -5,7 +5,8 @@ import {
   LiveObject,
 } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
-import { Layer, Color } from "./types/canvas";
+import { Layer, LineLayer, LayerType, LayerStyle } from "./types/layers";
+import { Color, Point } from "./types/canvas";
 
 const client = createClient({
   throttle: 50,
@@ -18,6 +19,16 @@ const client = createClient({
 type Presence = {
   cursor: { x: number; y: number } | null;
   selection: string[];
+  layerDraft: {
+    layerType:
+      | LayerType.Ellipse
+      | LayerType.Rectangle
+      | LayerType.Diamond
+      | LayerType.Line;
+    initialPosition: Point;
+    currentPosition?: Point;
+  } | null;
+  lineDraft: LineLayer | null;
   pencilDraft: [x: number, y: number, pressure: number][] | null;
   pencilColor: Color | null;
   // ...
