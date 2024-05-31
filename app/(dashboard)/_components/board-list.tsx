@@ -8,21 +8,25 @@ import EmptyStateSearch from "./emptystates/search";
 import BoardCard from "./board-card";
 import NewBoardCard from "./new-board-card";
 import Loading from "./emptystates/loading";
-import RenameModal from "./rename-modal";
+import { usePathname } from "next/navigation";
 
 interface BoardListProps {
   organizationId: string;
   query: {
     search?: string;
-    favourite?: string;
   };
 }
 
-function BoardList({ organizationId, query }: any) {
+function BoardList({ organizationId, query }: BoardListProps) {
+  const pathname = usePathname();
   const data = useQuery(api.boards.get, {
-    ...query,
+    search: query?.search,
+    favourite: pathname === "/favourites" ? "true" : "false",
     orgId: organizationId,
   });
+
+  const showNewBoardCard =
+    !query.search && (pathname === "/" || pathname === "/teams");
 
   if (data === undefined) {
     return <Loading />;
@@ -30,16 +34,14 @@ function BoardList({ organizationId, query }: any) {
 
   if (!data?.length && query?.search) {
     return <EmptyStateSearch />;
-  } else if (!data?.length && query?.favourite) {
+  } else if (pathname === "/favourites" && !data?.length) {
     return <EmptyStateFavourite />;
   } else if (!data?.length) {
     return <EmptyStateBoard />;
   } else {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-10">
-        {!query.search && !query.favourite && (
-          <NewBoardCard organizationId={organizationId} />
-        )}
+        {showNewBoardCard && <NewBoardCard organizationId={organizationId} />}
         {data.map((board) => (
           <BoardCard
             key={board._id}
