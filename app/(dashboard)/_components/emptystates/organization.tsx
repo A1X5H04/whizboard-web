@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useRef } from "react";
+import OrgModal from "../org-modal";
 
 function EmptyStateOrg() {
+  const modalRef = useRef<HTMLDialogElement>(null);
   return (
     <div className="grid place-items-center h-full">
       <div className="text-center flex flex-col items-center justify-center">
@@ -15,7 +18,13 @@ function EmptyStateOrg() {
         <p className="text-sm text-gray-500">
           Create an organization to get started!
         </p>
-        <button className="btn btn-primary mt-6">Create Organization</button>
+        <button
+          onClick={() => modalRef.current?.showModal()}
+          className="btn btn-primary mt-6"
+        >
+          Create Organization
+        </button>
+        <OrgModal modalRef={modalRef} />
       </div>
     </div>
   );
