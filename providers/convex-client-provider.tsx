@@ -10,7 +10,6 @@ import {
 } from "convex/react";
 import AuthLoader from "@/components/auth-loader";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import NotAuthenticated from "@/components/not-authenticated";
 import { Fragment } from "react";
 
