@@ -1,71 +1,28 @@
+import { LayerType } from "./layers";
+
+export enum CanvasMode {
+  None,
+  Pressing,
+  Panning,
+  Inserting,
+  Creating,
+  SelectionNet,
+  Translating,
+  Resizing,
+  Drawing,
+}
+
 export type Color = {
   r: number;
   g: number;
   b: number;
+  a: number;
 };
 
 export type Camera = {
   x: number;
   y: number;
-};
-
-export enum LayerType {
-  Rectangle,
-  Ellipse,
-  Path,
-  Text,
-  Note,
-}
-
-export type RectangleLayer = {
-  type: LayerType.Rectangle;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  fill: Color;
-  value?: string;
-};
-
-export type EllipseLayer = {
-  type: LayerType.Ellipse;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  fill: Color;
-  value?: string;
-};
-
-export type PathLayer = {
-  type: LayerType.Path;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  fill: Color;
-  points: number[][];
-  value?: string;
-};
-
-export type TextLayer = {
-  type: LayerType.Text;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  fill: Color;
-  value?: string;
-};
-
-export type NoteLayer = {
-  type: LayerType.Note;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  fill: Color;
-  value?: string;
+  zoom: number;
 };
 
 export type Point = {
@@ -87,38 +44,26 @@ export enum Side {
   Left = 4,
 }
 
-export type Layer =
-  | RectangleLayer
-  | EllipseLayer
-  | PathLayer
-  | TextLayer
-  | NoteLayer;
-
 export type CanvasState =
   | { mode: CanvasMode.None }
   | { mode: CanvasMode.Pressing; origin: Point }
-  | { mode: CanvasMode.SelectionNet; origin: Point; current?: Point }
+  | { mode: CanvasMode.Panning; origin?: Point }
   | {
       mode: CanvasMode.Translating;
-      current: Point;
+      origin: Point;
+    }
+  | { mode: CanvasMode.SelectionNet; origin: Point; current?: Point }
+  | {
+      mode: CanvasMode.Creating;
+      layerType:
+        | LayerType.Rectangle
+        | LayerType.Ellipse
+        | LayerType.Diamond
+        | LayerType.Line;
     }
   | {
       mode: CanvasMode.Inserting;
-      layerType:
-        | LayerType.Ellipse
-        | LayerType.Rectangle
-        | LayerType.Text
-        | LayerType.Note;
+      layerType: LayerType.Text | LayerType.Note | LayerType.Image;
     }
   | { mode: CanvasMode.Resizing; initialBounds: Bounds; corner: Side }
   | { mode: CanvasMode.Drawing };
-
-export enum CanvasMode {
-  None,
-  Pressing,
-  SelectionNet,
-  Translating,
-  Inserting,
-  Resizing,
-  Drawing,
-}
