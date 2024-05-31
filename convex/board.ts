@@ -17,6 +17,16 @@ const images = [
   "/placeholders/13.svg",
   "/placeholders/14.svg",
   "/placeholders/15.svg",
+  "/placeholders/16.svg",
+  "/placeholders/17.svg",
+  "/placeholders/18.svg",
+  "/placeholders/19.svg",
+  "/placeholders/20.svg",
+  "/placeholders/21.svg",
+  "/placeholders/22.svg",
+  "/placeholders/23.svg",
+  "/placeholders/24.svg",
+  "/placeholders/25.svg",
 ];
 
 export const create = mutation({
