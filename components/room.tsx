@@ -7,10 +7,10 @@ import {
   LiveObject,
   createClient,
 } from "@liveblocks/client";
-import { ClientSideSuspense, createRoomContext } from "@liveblocks/react";
+import { ClientSideSuspense } from "@liveblocks/react";
 
 import { RoomProvider } from "@/liveblocks.config";
-import { Layer } from "@/types/canvas";
+import { Layer } from "@/types/layers";
 
 interface RoomProps {
   children: ReactNode;
@@ -25,6 +25,8 @@ function Room({ children, roomId, fallback }: RoomProps) {
       initialPresence={{
         cursor: null,
         selection: [],
+        layerDraft: null,
+        lineDraft: null,
         pencilDraft: null,
         pencilColor: null,
       }}
