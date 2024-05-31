@@ -1,13 +1,5 @@
-import {
-  Color,
-  Side,
-  Point,
-  Bounds,
-  Camera,
-  Layer,
-  LayerType,
-  PathLayer,
-} from "@/types/canvas";
+import { Side, Point, Bounds, Camera, Color } from "@/types/canvas";
+import { Layer, LayerType, PathLayer } from "@/types/layers";
 
 const displayColors = [
   "#ef476f",
@@ -22,10 +14,14 @@ export const connectionIdtoColor = (connectionId: number) => {
   return displayColors[connectionId % displayColors.length];
 };
 
-export function colorToCss(color: Color) {
+export function colorToHex(color: Color) {
   return `#${color.r.toString(16).padStart(2, "0")}${color.g
     .toString(16)
-    .padStart(2, "0")}${color.b.toString(16).padStart(2, "0")}`;
+    .padStart(2, "0")}${color.b.toString(16).padStart(2, "0")}${Math.round(
+    color.a * 255
+  )
+    .toString(16)
+    .padStart(2, "0")}`;
 }
 
 export function getContrastingTextColor(color: Color) {
@@ -39,15 +35,17 @@ export const pointerEventToCanvasCoords = (
   camera: Camera
 ) => {
   return {
-    x: Math.round(event.clientX) - camera.x,
-    y: Math.round(event.clientY) - camera.y,
+    x: Math.round(event.clientX) - camera.x / camera.zoom,
+    y: Math.round(event.clientY) - camera.y / camera.zoom,
   };
 };
 
 export function resizeBounds(
   bounds: Bounds,
   corner: Side,
-  point: Point
+  point: Point,
+  isLineLayer: boolean,
+  preserveAspectRatio: boolean
 ): Bounds {
   const result = {
     x: bounds.x,
@@ -55,6 +53,28 @@ export function resizeBounds(
     width: bounds.width,
     height: bounds.height,
   };
+
+  // if (isLineLayer) {
+  //   if ((corner & Side.Left) === Side.Left) {
+  //     result.x = point.x;
+  //     result.width = bounds.x + bounds.width - point.x;
+  //   }
+
+  //   if ((corner & Side.Right) === Side.Right) {
+  //     result.width = point.x - bounds.x;
+  //   }
+
+  //   if ((corner & Side.Top) === Side.Top) {
+  //     result.y = point.y;
+  //     result.height = bounds.y + bounds.height - point.y;
+  //   }
+
+  //   if ((corner & Side.Bottom) === Side.Bottom) {
+  //     result.height = point.y - bounds.y;
+  //   }
+
+  //   return result;
+  // }
 
   if ((corner & Side.Left) === Side.Left) {
     result.x = Math.min(point.x, bounds.x + bounds.width);
@@ -155,7 +175,9 @@ export function penPointsToPathLayer(
     y: top,
     width: right - left,
     height: bottom - top,
-    fill: color,
+    style: {
+      fillColor: color,
+    },
     points: points.map(([x, y, pressure]) => [x - left, y - top, pressure]),
   };
 }
