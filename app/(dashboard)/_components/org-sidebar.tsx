@@ -1,18 +1,18 @@
 "use client";
 
 import { OrganizationSwitcher } from "@clerk/nextjs";
-import { useSearchParams } from "next/navigation";
-import { Star, UsersThree } from "@phosphor-icons/react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Star, User, UsersThree } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 function OrganizationSidebar() {
-  const searchParams = useSearchParams();
-  const favouriteRoute = searchParams.get("favourite");
+  const pathname = usePathname();
 
   return (
     <div className="hidden lg:flex flex-col space-y-6 w-64 pl-5 pt-5">
-      <div className="inline-flex gap-x-3 mb-3 mt-2">
+      <div className="inline-flex gap-x-3 mx-2 mt-4 mb-6">
         <Image src="/logo.png" alt="Logo" width={28} height={28} />
         <h1 className="font-bold text-lg">WhizBoard</h1>
       </div>
@@ -36,14 +36,6 @@ function OrganizationSidebar() {
               "&:hover": {
                 backgroundColor: "oklch(var(--b2))",
               },
-
-              // "@media (prefers-color-scheme: dark)": {
-              //   backgroundColor: "#374151",
-              //   color: "#d1d5db",
-              //   "&:hover": {
-              //     backgroundColor: "#4b5563",
-              //   },
-              // },
               justifyContent: "space-between",
             },
             organizationSwitcherTriggerIcon: {
@@ -56,20 +48,26 @@ function OrganizationSidebar() {
       <div className="space-y-1 w-full">
         <ul className="menu w-full space-y-2">
           <li>
-            <Link href="/" className={favouriteRoute ? "" : "active"}>
-              <UsersThree weight={favouriteRoute ? "regular" : "fill"} />
-              Team Board
+            <Link href="/" className={twMerge(pathname === "/" && "active")}>
+              <User weight={pathname === "/" ? "fill" : "regular"} />
+              My Boards
             </Link>
           </li>
           <li>
             <Link
-              className={favouriteRoute ? "active" : ""}
-              href={{
-                pathname: "/",
-                query: { favourite: "true" },
-              }}
+              href="/teams"
+              className={twMerge(pathname === "/teams" && "active")}
             >
-              <Star weight={favouriteRoute ? "fill" : "regular"} />
+              <UsersThree weight={pathname === "/teams" ? "fill" : "regular"} />
+              Team Boards
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={twMerge(pathname === "/favourites" && "active")}
+              href="/favourites"
+            >
+              <Star weight={pathname === "/favourites" ? "fill" : "regular"} />
               Favourite Board
             </Link>
           </li>
